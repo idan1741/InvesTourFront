@@ -1,0 +1,27 @@
+.stock-price {
+    color: white;
+}
+
+mat-expansion-panel {
+    width: 380px;
+    margin-left: 6px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #333;
+}
+
+::ng-deep .mat-expansion-panel-header-title {
+    /* width: 50%; */
+    color: white;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+::ng-deep .mat-expansion-panel-header-description {
+    align-items: center;
+    margin-left: 3px;
+}
+
+::ng-deep .mat-expansion-panel-header {
+    padding: 0px 11px !important;
+}

@@ -1,0 +1,23 @@
+<div class="website">
+    <div class="bar">
+        <div style="font-family: 'Poppins'; color: #afa697;">
+            <span style="font-size: xx-large;" [routerLink]="['/']">
+                InvesTour
+            </span>
+            <a tabindex="1" style="margin-left: 35px; text-decoration: none;"
+            [routerLink]="['/main']"> market </a>
+            <a tabindex="1" *ngIf="(firstName$ | async)" style="margin-left: 35px; text-decoration: none;"
+                [routerLink]="['/myWall']"> my wall </a>
+            <a tabindex="1" *ngIf="(firstName$ | async)" style="margin-left: 35px; text-decoration: none;"
+                [routerLink]="['/myProfile']"> my profile </a>
+        </div>
+        <div style="display: flex" *ngIf="!(firstName$ | async)">
+            <button mat-stroked-button (click)="signIn()">Sign In</button>
+            <button style="margin-left: 15px; background-color: #f8d24b;" mat-stroked-button (click)="signUp()">Sign Up</button>
+        </div>
+        <div style="display: flex" *ngIf="(firstName$ | async)">
+            <span> Hi {{(firstName$ | async)}} {{(lastName$ | async)}} </span>
+        </div>
+    </div>
+    <router-outlet class="content"></router-outlet>
+</div>
